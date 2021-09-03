@@ -15,4 +15,8 @@ export class CategoriesService {
   getCategories(): Observable<Category[]> {
     return this._http.get<Category[]>(this._url);
   }
+
+  getCategory(id: number): Observable<Category> {
+    return this._http.get<Category>(this._url + "-" + id);
+  }
 }
