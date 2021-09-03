@@ -1,0 +1,24 @@
+<h1>Panneau d'administration</h1>
+	
+	<hr class="my-2">
+	
+	<div class="container-md mt-4">
+		
+		<h2>Ajouter une catégorie</h2>
+		<form (ngSubmit)="submit()">
+			<div class="mb-3">
+		    	<label for="name" class="form-label">Nom</label>
+		    	<input class="form-control" name="name" [(ngModel)]="name">
+		  	</div>
+		  	<div class="mb-3">
+		    	<label for="shortText" class="form-label">Description</label>
+		    	<input class="form-control" name="shortText" [(ngModel)]="shortText">
+		  	</div>
+		  	<!-- <c:if test="${ category.id != 0 }">
+		  		<form:input type="hidden" path="id"/>
+		  	</c:if> -->
+		  	<button type="submit" class="btn btn-primary">Ajouter</button>
+		</form>
+		
+		
+	</div>

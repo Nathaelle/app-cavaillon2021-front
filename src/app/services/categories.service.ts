@@ -10,6 +10,8 @@ export class CategoriesService {
 
   private _url = "http://localhost:8080/categories";
 
+  private _category = <Category>{};
+
   constructor(private _http: HttpClient) {}
 
   getCategories(): Observable<Category[]> {
@@ -19,4 +21,11 @@ export class CategoriesService {
   getCategory(id: number): Observable<Category> {
     return this._http.get<Category>(this._url + "-" + id);
   }
+
+  addCategory(): Observable<any | null> {
+    return this._http.post("http://localhost:8080/add-category", this._category);
+  }
+
+  get category(): Category { return this._category }
+  set category(cat: Category) { this._category = cat }
 }

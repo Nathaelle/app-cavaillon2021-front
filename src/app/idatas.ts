@@ -1,8 +1,8 @@
 export interface Category {
-   id: number;
+   id?: number;
    name: string;
    shortText: string; 
-   items: Item[];
+   items?: Item[];
 }
 
 export interface Item {
