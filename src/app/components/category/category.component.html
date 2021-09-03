@@ -1,1 +1,37 @@
-<p *ngIf="cat != undefined">category {{ cat.name }} works!</p>
+<div *ngIf="cat != undefined">
+    <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">{{ cat.name }}</h1>
+            <p class="col-md-8 fs-4">{{ cat.shortText }}</p>
+            </div>
+    </div>
+	
+    <div class="p-4 container-fluid mt-4 m-y-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ cat.name }}</li>
+            </ol> 
+        </nav>
+			
+        <div class="row">
+            <div *ngFor="let item of cat.items" class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <a href="#" class="btn btn-primary">Détails du produit</a>
+                    </div>
+                </div>
+            </div>
+				
+        </div>
+    </div>
+</div>
+<div *ngIf="cat == undefined" class="p-5 mb-4 bg-light rounded-3 jumbotron">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">404 - Not found</h1>
+        <p class="col-md-8 fs-4">La catégorie demandée n'a pas été trouvée.</p>
+        </div>
+</div>
